@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="body">
+        <!--display screen-->
+        <div class="screen">
+            <div>
+                <input id="result" type="text" class="form-control text" placeholder="0">
+            </div>
+        </div>
+        <!--Calculator button-->
+
+        <div class="calc-button-row">
+            <button id="7" onclick="displaynumber(7)">7</button>
+            <button id="8" onclick="displaynumber(8)">8</button>
+            <button id="9" onclick="displaynumber(9)">9</button>
+            <button id="raw" onclick="displaynumber('*')">x</button>
+            <br>
+
+            <button id="4" onclick="displaynumber(4)">4</button>
+            <button id="5" onclick="displaynumber(5)">5</button>
+            <button id="6" onclick="displaynumber(6)">6</button>
+            <button id="raw" onclick="displaynumber('-')">-</button>
+            <br>
+
+            <button id="1" onclick="displaynumber(1)">1</button>
+            <button id="2" onclick="displaynumber(2)">2</button>
+            <button id="3" onclick="displaynumber(3)">3</button>
+            <button id="raw" onclick="displaynumber('+')">+</button>
+            <br>
+
+            
+           
+            <button id="forth" onclick="displaynumber(0)">00</button>
+            <button id="forth" onclick="displaynumber(0)">0</button>
+            <button id="forth" onclick="displaynumber('.')">.</button>
+            <button id="raw" onclick="displaynumber('/')">/</button>
+            
+            <button id="fifth" onclick="removelast(0)">&#9003;</button>
+            <button id="fifth" onclick="displaynumber(0)">%</button>
+            <button id="fifth" onclick="displayclear('AC')">AC</button>
+            <button id="fifth" onclick="evaluateExp('=')">=</button>
+           
+
+
+        </div>
+
+
+    </div>
+    <script>
+         function displaynumber(num){
+            result.value+=num
+        }
+         //clear text box
+
+         function displayclear(){
+            result.value=''
+        }
+        //evaluate expression
+        function evaluateExp(){
+
+
+//method 1
+// exp=result.value //6*6
+// output=eval(exp)
+// result.value=output
+result.value=eval(result.value)
+        }
+
+//removing last item
+function removelast(){
+    result.value=result.value.slice(0,-1)
+
+}
+
+
+    </script>
+</body>
+</html>
